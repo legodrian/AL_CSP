@@ -20,16 +20,16 @@ while True:
 
 
 while True:
-    noun1 = input("Tell me another noun: ").strip().lower()
-    if noun1.isnumeric():
+    noun_1 = input("Tell me another noun: ").strip().lower()
+    if noun_1.isnumeric():
       print("Numbers are not noun")
-    elif " " in noun1: 
+    elif " " in noun_1: 
        print("One noun is okay.")
     else:
        break
 
 while True:
-    adjective = input("Tell me an adejctive: ").strip().lower()
+    adjective = input("Tell me an adjective: ").strip().lower()
     if adjective.isnumeric():
       print("That's a number not an adjective")
     elif " " in adjective: 
@@ -55,4 +55,4 @@ while True:
     else:
        break
 
-print("My " + adjective + " " + noun +" was running late to the party at the house of " + name + ". At the party my " + noun + " was " + verb + " and stole a " + noun1 + ". Going home he ate a " + food + ".")
+print("My " + adjective + " " + noun +" was running late to the party at the house of " + name + ". At the party my " + noun + " was " + verb + " and stole a " + noun_1 + ". Going home he ate a " + food + ".")
