@@ -8,9 +8,9 @@ max_attempts = 6
 
 answer = random.randint(1,100)
 
-print(f"Hello user ! Im thinking of a number between 1 and 100, you have 6 attempts. Which number im thinking ?")
+print("Hello user ! Im thinking of a number between 1 and 100, you have 6 attempts. Which number im thinking ?")
 
-for attempt in range(1,100): 
+for attempt in range(1,7): 
     current_attempts += 1
     guess = int(input(f"Guess #{current_attempts}: ")) 
     if guess == answer:
