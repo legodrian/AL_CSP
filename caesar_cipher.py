@@ -7,12 +7,8 @@ def caesar_shift(message, shift):
         shift = input("Enter a shift amount: ")
         return caesar_shift 
 
-for character in message: 
-    
-
-
-
-
+for character in letter:
+    if character.isalpha():
 
 
 print(f"the letter {lower_start} is the number {ord(lower_start)}")
