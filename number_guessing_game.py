@@ -2,6 +2,14 @@
 
 import random
 
+def stupid_proof(attempt):
+    while True: 
+        try: 
+            amount = int(input(f"Guess #{current_attempts}: "))
+            return amount
+        except : 
+            print("You think you are funny ? Try again >:/")
+
 current_attempts = 0
 
 max_attempts = 6
@@ -12,7 +20,7 @@ print("Hello user ! Im thinking of a number between 1 and 100, you have 6 attemp
 
 for attempt in range(1,7): 
     current_attempts += 1
-    guess = int(input(f"Guess #{current_attempts}: ")) 
+    guess = stupid_proof(attempt) 
     if guess == answer:
         print(f"You win !! You did it in Guess #{current_attempts}!")
         break
