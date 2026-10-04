@@ -1,2 +1,0 @@
-wins = 0
-losess = 0
