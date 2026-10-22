@@ -1,0 +1,82 @@
+PART 1 — TEST PLAN
+
+Test input: 4 , no / Expected: $0.00 / Actual: $0 / Fail
+
+Test input: 5 , no / Expected: $8.00 / Actual: $8 / Fail
+
+Test input: 12 , no / Expected: $8.00 / Actual: $12 / Fail
+
+Test input: 13 , no / Expected: $12.00 / Actual: $12 / Fail
+
+Test input: 64 , no / Expected: $12.00 / Actual: $12 / Fail
+
+Test input: 65 , no / Expected: $9.00 / Actual: $9 / Fail
+
+Test input: 2 , yes / Expected: $0.00 / Actual: $-3 / Fail
+
+Test input: 25 , yes / Expected: $9.00 / Actual: $9 / Fail
+
+Test input: "Wii" , none / Expected: Invalid age / Actual: invalid / Pass
+
+Test input: 0.7 , none / Expected: Invalid age / Actual: invalid / Pass
+
+Test input: -666 , yes / Expected: Invalid age / Actual: $-3 / Fail
+
+PART 2 — BUG REPORTS
+
+Bug 1 — Age 12 has the wrong price
+Input: 12 / no
+What the spec says: Ages 5–12 should cost $8.00.
+What actually happens: The program charges $12.
+Error type: Logic error.
+
+Bug 2 — Matinee price goes below $0
+Input: 2 / yes
+What the spec says: Ages 0–4 are free, so the price should be $0.00. A matinee discount cannot make the price go below $0.
+What actually happens: The program prints $-3.
+Error type: Logic error.
+
+Bug 3 — Price does not have two decimal places
+Input: 25 / yes
+What the spec says: The price should be printed with two decimal places, such as $9.00.
+What actually happens: The program prints $9 instead of $9.00.
+Error type: Logic error.
+
+Bug 4 — Invalid ages are not handled correctly
+Input: "Wii" / none
+What the spec says: If the age is not a whole number of 0 or more, the program should print "Invalid age" and stop without asking any more questions.
+What actually happens: The program crashes with a ValueError when it tries to convert "Wii" into an integer.
+Error type: Run-time error.
+Another example: 0.7 / none also causes the program to crash because it is not a whole number.
+
+PART 3 — FIXED PROGRAM TEST RESULTS
+
+Test input: 4 , no / Expected: $0.00 / Actual: $0.00 / Pass
+
+Test input: 5 , no / Expected: $8.00 / Actual: $8.00 / Pass
+
+Test input: 12 , no / Expected: $8.00 / Actual: $8.00 / Pass
+
+Test input: 13 , no / Expected: $12.00 / Actual: $12.00 / Pass
+
+Test input: 64 , no / Expected: $12.00 / Actual: $12.00 / Pass
+
+Test input: 65 , no / Expected: $9.00 / Actual: $9.00 / Pass
+
+Test input: 2 , yes / Expected: $0.00 / Actual: $0.00 / Pass
+
+Test input: 25 , yes / Expected: $9.00 / Actual: $9.00 / Pass
+
+Test input: "Wii" , none / Expected: Invalid age / Actual: Invalid age / Pass
+
+Test input: 0.7 , none / Expected: Invalid age / Actual: Invalid age / Pass
+
+Test input: -666 , yes / Expected: Invalid age / Actual: Invalid age / Pass
+
+PART 4 — EXPLANATION
+The program first asks for the user's age and uses try/except to handle invalid inputs that are not whole numbers. 
+If the age is valid, the program uses if and elif statements to determine the ticket price based on the person's age. 
+It then checks if the ticket is a matinee and subtracts $3 without allowing the price to go below $0.
+Finally, it prints the ticket price with two decimal places.
+
+  
